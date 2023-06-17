@@ -8,7 +8,7 @@ require 'dbcon.php';
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Donor Edit</title>
+    <title>Student Edit</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   </head>
   <body>
@@ -29,43 +29,50 @@ require 'dbcon.php';
                     <?php 
                     if(isset($_GET['id']))
                     {
-                        $donor_id = mysqli_real_escape_string($con, $_GET['id']);
-                        $query ="SELECT * FROM school WHERE id='$donor_id' ";
+                        $student_id = mysqli_real_escape_string($con, $_GET['id']);
+                        $query ="SELECT * FROM school WHERE id='$student_id' ";
                         $query_run = mysqli_query($con,$query);
 
                         
                        if(mysqli_num_rows($query_run) > 0)
                        {
-                        $donor =mysqli_fetch_array($query_run);
+                        $student =mysqli_fetch_array($query_run);
                         ?>
                       
                     <form action="code.php" method="post">
 
 
-                    <input type="hidden" name="donor_id" value="<?= $donor['id']; ?>" >
+                    <input type="hidden" name="student_id" value="<?= $student['id']; ?>" >
                     <div class="mb-3">
-                        <label> Name</label>
-                        <input type="text" name="name" id="" value="<?= $donor['name']; ?>" class="form-control">
+                        <label> </label>
+                        <input type="text" name="name" id="" value="<?= $student['name']; ?>" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label>Donor Address</label>
-                        <input type="text" name="age" id="" value="<?= $donor['age']; ?>" class="form-control">
+                        <label>Age</label>
+                        <input type="text" name="age" id="" value="<?= $student['age']; ?>" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label>Blood Group</label>
-                        <input type="text" name="dbrith" id="" value="<?= $donor['dbrith']; ?>" class="form-control">
+                        <label>Date of Birth</label>
+                        <input type="date" name="dbrith" id="" value="<?= $student['dbrith']; ?>" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label>Phone Number</label>
-                        <input type="text" name="phone" id="" value="<?= $donor['phone']; ?>" class="form-control">
+                        <input type="text" name="phone" id="" value="<?= $student['phone']; ?>" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label>Date</label>
-                        <input type="email" name="email" id="" value="<?= $donor['email']; ?>" class="form-control">
+                        <label>Email</label>
+                        <input type="email" name="email" id="" value="<?= $student['email']; ?>" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label>Gender:</label>
+                        <input type="radio" name="gender" value="Male" <?php if($gender == 'Male'){ echo "checked";} ?> >Male
+
+                         <input type="radio" name="gender" value="Female" <?php if($gender == 'Female'){ echo "checked";} ?>>Female
+
                     </div>
                     <div class="mb-3">
                     
-                        <button type="submit" name="update_student" class="btn btn-primary">Update Donor</button>
+                        <button type="submit" name="update_student" class="btn btn-primary">Update Student</button>
                     </div>
                     </form>
                     <?php
