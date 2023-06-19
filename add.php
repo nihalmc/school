@@ -53,6 +53,10 @@ session_start();
                          <input type="radio" name="gender" value="Female">Female
                     </div>
                     <div class="mb-3">
+                        <label>Address</label>
+                        <input type="text" name="address" id="" class="form-control">
+                    </div>
+                    <div class="mb-3">
                         <button type="submit" name="save_student" class="btn btn-primary">Save Student</button>
                     </div>
                     </form>

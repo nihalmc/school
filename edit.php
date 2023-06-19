@@ -71,6 +71,10 @@ require 'dbcon.php';
 
                     </div>
                     <div class="mb-3">
+                        <label>Address</label>
+                        <input type="text" name="address" value="<?= $student['address']; ?>" id="" class="form-control">
+                    </div>
+                    <div class="mb-3">
                     
                         <button type="submit" name="update_student" class="btn btn-primary">Update Student</button>
                     </div>

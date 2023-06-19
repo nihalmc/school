@@ -41,34 +41,47 @@ require 'dbcon.php';
 
                    
                     <div class="mb-3">
-                        <label>Donor Name</label>
-                     <p class="form-control">
+                        <label>Donor Name:-</label>
+                     <p class="">
                      <?= $student['name']; ?>
                      </p>
 
                     </div>
                     <div class="mb-3">
                         <label>Age</label>
-                        <p class="form-control">
+                        <p class="">
                         <?= $student['age']; ?>
                      </p>
                     </div>
                     <div class="mb-3">
                         <label>Date of Birth</label>
-                        <p class="form-control">
+                        <p class="">
                         <?= $student['dbrith']; ?>
                      </p>
                     </div>
 
                     <div class="mb-3">
                         <label>Student Phone</label>
-                        <p class="form-control">
+                        <p class="">
                      <?= $student['phone']; ?>
                      </p>
                     <div class="mb-3">
                         <label>Email</label>
                         <p class="">
                         <?= $student['email']; ?>
+                     </p>
+                    </div>
+                    <div class="mb-3">
+                        <label>Gender</label>
+                        <p class="">
+                        <?= $student['gender']; ?>
+                     </p>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Address</label>
+                        <p class="">
+                        <?= $student['address']; ?>
                      </p>
                     </div>
         

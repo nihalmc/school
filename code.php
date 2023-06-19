@@ -34,11 +34,12 @@ if(isset($_POST['update_student']))
   $phone =mysqli_real_escape_string($con,$_POST['phone']);
   $email =mysqli_real_escape_string($con,$_POST['email']);
   $gender =mysqli_real_escape_string($con,$_POST['gender']);
+  $address =mysqli_real_escape_string($con,$_POST['address']);
 
 
 
-
-$query = "UPDATE school SET name='$name',age='$age' ,dbrith='$dbrith', phone='$phone',email='$email', gender='$gender' WHERE id='$student_id'";
+$query = "UPDATE school SET name='$name',age='$age' ,dbrith='$dbrith', phone='$phone'
+,email='$email', gender='$gender',address='$address' WHERE id='$student_id'";
 
 $query_run =mysqli_query($con,$query);
 
@@ -66,9 +67,10 @@ if(isset($_POST['save_student'])){
   $phone =mysqli_real_escape_string($con,$_POST['phone']);
   $email =mysqli_real_escape_string($con,$_POST['email']);
   $gender =mysqli_real_escape_string($con,$_POST['gender']);
+  $address =mysqli_real_escape_string($con,$_POST['address']);
 
-$query ="INSERT INTO school(name,age,dbrith,phone,email,gender)
- VALUES('$name','$age','$dbrith','$phone','$email','$gender')";
+$query ="INSERT INTO school(name,age,dbrith,phone,email,gender,address)
+ VALUES('$name','$age','$dbrith','$phone','$email','$gender','$address')";
 
 $query_run= mysqli_query($con, $query);
 
