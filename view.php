@@ -84,7 +84,12 @@ require 'dbcon.php';
                         <?= $student['address']; ?>
                      </p>
                     </div>
-        
+                    <div class="mb-3">
+                        <label>Language</label>
+                        <p class="">
+                        <?= $student['language']; ?>
+                     </p>
+                    </div>
                     <?php
                        } 
                        else

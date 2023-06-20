@@ -21,7 +21,7 @@ require 'dbcon.php';
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Donor Edit
+                    <h4>Student Edit
                         <a href="index.php" class="btn btn-danger float-end">BACK</a>
                     </h4>
                 </div>
@@ -73,6 +73,10 @@ require 'dbcon.php';
                     <div class="mb-3">
                         <label>Address</label>
                         <input type="text" name="address" value="<?= $student['address']; ?>" id="" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="">language:</label>
+                        <input type="text" value="" name="language" class="form-control" placeholder="Gujrati,Hindi,English,Marathi">
                     </div>
                     <div class="mb-3">
                     

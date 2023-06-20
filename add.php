@@ -57,6 +57,13 @@ session_start();
                         <input type="text" name="address" id="" class="form-control">
                     </div>
                     <div class="mb-3">
+                        <label for="">language:</label>
+                        <input type="checkbox" value="Gujrati" name="language[]">Gujrati 
+                        <input type="checkbox" value="Hindi" name="language[]">Hindi
+                        <input type="checkbox" value="English" name="language[]">English 
+                        <input type="checkbox" value="Marathi" name="language[]">Marathi
+                    </div>
+                    <div class="mb-3">
                         <button type="submit" name="save_student" class="btn btn-primary">Save Student</button>
                     </div>
                     </form>

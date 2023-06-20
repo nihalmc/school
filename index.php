@@ -28,7 +28,6 @@ require 'dbcon.php';
             <table class="table table-borderd table-striped">
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Studnt Name</th>
                         <th>Age</th>
                         <th>Date of Birth</th>
@@ -36,6 +35,7 @@ require 'dbcon.php';
                         <th>Email</th>
                         <th>Gander</th>
                         <th>Address</th>
+                        <th>Language</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -49,11 +49,9 @@ require 'dbcon.php';
                     {
 
                         foreach($query_run as $student){
-                            //echo $student['name'];
-
+                           
                             ?>
                      <tr>
-                         <td><?= $student['id']; ?></td>
                          <td><?= $student['name']; ?></td>
                          <td><?=$student['age']; ?></td>
                          <td><?= $student['dbrith']; ?></td>
@@ -61,6 +59,7 @@ require 'dbcon.php';
                          <td><?= $student['email']; ?></td>
                          <td><?= $student['gender']; ?></td>
                          <td><?= $student['address']; ?></td>
+                         <td><?= $student['language']; ?></td>
                          <td>
                             <a href="view.php?id=<?= $student['id'];?>" class="btn btn-info btn-sm">View</a>
                             <a href="edit.php?id=<?= $student['id'];?>" class="btn btn-success btn-sm">Edit</a>
