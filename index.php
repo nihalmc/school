@@ -28,6 +28,7 @@ require 'dbcon.php';
             <table class="table table-borderd table-striped">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Studnt Name</th>
                         <th>Age</th>
                         <th>Date of Birth</th>
@@ -35,8 +36,7 @@ require 'dbcon.php';
                         <th>Email</th>
                         <th>Gander</th>
                         <th>Address</th>
-                        <th>Language</th>
-                        <th>Action</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -52,6 +52,7 @@ require 'dbcon.php';
                            
                             ?>
                      <tr>
+                     <td><?= $student['id']; ?></td>
                          <td><?= $student['name']; ?></td>
                          <td><?=$student['age']; ?></td>
                          <td><?= $student['dbrith']; ?></td>
@@ -59,7 +60,42 @@ require 'dbcon.php';
                          <td><?= $student['email']; ?></td>
                          <td><?= $student['gender']; ?></td>
                          <td><?= $student['address']; ?></td>
-                         <td><?= $student['language']; ?></td>
+                    </tr>
+                            <?php
+                        }
+
+                    }else{
+                        echo "<h2> No Record Fonud </h5>";
+                    }
+                    ?>
+                    
+                </tbody>
+            </table>
+           </div>
+           <div class="card-body">
+           <table class="table table-borderd table-striped">
+                <thead>
+                    <tr>
+                      <th>Language</th>
+                        <th>CourseName</th>
+                        <th>Action</th>
+                        </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                    $query ="SELECT * FROM school";
+                    $query_run = mysqli_query($con,$query);
+                   
+
+                    if(mysqli_num_rows($query_run) > 0)
+                    {
+
+                        foreach($query_run as $student){
+                           
+                            ?>
+                     <tr>
+                     <td><?= $student['language']; ?></td>
+                         <td><?= $student['courseName']?></td>
                          <td>
                             <a href="view.php?id=<?= $student['id'];?>" class="btn btn-info btn-sm">View</a>
                             <a href="edit.php?id=<?= $student['id'];?>" class="btn btn-success btn-sm">Edit</a>
@@ -78,6 +114,7 @@ require 'dbcon.php';
                     
                 </tbody>
             </table>
+           </div>
            </div>
             </div>
         </div>

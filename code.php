@@ -69,10 +69,11 @@ if(isset($_POST['save_student'])){
   $gender =mysqli_real_escape_string($con,$_POST['gender']);
   $address =mysqli_real_escape_string($con,$_POST['address']);
   $language =implode(',',$_POST['language']);
+  $courseName =mysqli_real_escape_string($con,$_POST['courseName']);
 
   
-$query ="INSERT INTO school(name,age,dbrith,phone,email,gender,address,language)
- VALUES('$name','$age','$dbrith','$phone','$email','$gender','$address','$language')";
+$query ="INSERT INTO school(name,age,dbrith,phone,email,gender,address,language,courseName)
+ VALUES('$name','$age','$dbrith','$phone','$email','$gender','$address','$language','$courseName')";
 
 $query_run= mysqli_query($con, $query);
 

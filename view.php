@@ -90,6 +90,12 @@ require 'dbcon.php';
                         <?= $student['language']; ?>
                      </p>
                     </div>
+                    <div class="mb-3">
+                        <label>CourseName</label>
+                        <p class="">
+                        <?= $student['courseName']; ?>
+                     </p>
+                    </div>
                     <?php
                        } 
                        else

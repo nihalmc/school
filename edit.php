@@ -65,9 +65,9 @@ require 'dbcon.php';
                     </div>
                     <div class="mb-3">
                         <label>Gender:</label>
-                        <input type="radio" name="gender" value="Male" <?php if($gender == 'Male'){ echo "checked";} ?> >Male
+                        <input type="radio" name="gender" value="<?= $student['gender']; ?>" <?php if($gender == 'Male'){ echo "checked";} ?> >Male
 
-                         <input type="radio" name="gender" value="Female" <?php if($gender == 'Female'){ echo "checked";} ?>>Female
+                         <input type="radio" name="gender" value="" <?php if($gender == 'Female'){ echo "checked";} ?>>Female
 
                     </div>
                     <div class="mb-3">
@@ -76,7 +76,18 @@ require 'dbcon.php';
                     </div>
                     <div class="mb-3">
                         <label for="">language:</label>
-                        <input type="text" value="" name="language" class="form-control" placeholder="Gujrati,Hindi,English,Marathi">
+                        <input type="text" value="<?= $student['language']; ?>" name="language" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                <select name="courseName">
+          <option value=""><?= $student['courseName']; ?></option>
+         <option value="web Designing">Web Designing</option>
+         <option value="web Development">Web Development</option>
+         <option value="app Development">app development</option>
+          <option value="game development">Game Development</option>
+           <option value="graphic Designing">Graphic Desiging</option>
+            <option value="digital marketing">Digital Marketing</option>
+           </select>
                     </div>
                     <div class="mb-3">
                     
